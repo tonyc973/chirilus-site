@@ -7,7 +7,7 @@
 
     <div class="reveal inline-flex items-center gap-2.5 px-3 py-1.5 border border-border-2 rounded-full text-[0.78rem] text-muted">
       <span class="pulse-dot"></span>
-      <span>Available for AI engineering roles · Q3 2026</span>
+      <span>Writing about reliable LLM systems · Open to roles Q3 2026</span>
     </div>
 
     <h1 class="reveal mt-8 font-medium tracking-[-0.035em] leading-[0.94]"
@@ -17,19 +17,21 @@
       <span class="text-muted-2">models.</span>
     </h1>
 
-    <p class="reveal mt-10 text-muted text-[1.05rem] md:text-[1.12rem] leading-[1.6] max-w-[34rem]">
-      I'm <span class="text-text font-medium">Antonie Chirilus</span>, an R&amp;D engineer at <a class="text-text underline-link" href="https://www.keysight.com">Keysight Technologies</a>. I build the parts of LLM systems that have to be correct &mdash; guided generation, schemas, validators, self-healing loops, local inference. The unglamorous half of agentic AI.
+    <p class="reveal mt-10 text-muted text-[1.05rem] md:text-[1.12rem] leading-[1.6] max-w-[36rem]">
+      I'm <span class="text-text font-medium">Antonie Chirilus</span>, an R&amp;D engineer at <a class="text-text underline-link" href="https://www.keysight.com">Keysight Technologies</a>. I build the parts of LLM systems that have to be correct &mdash; guided generation, schemas, validators, self-healing loops, local inference. The unglamorous half of agentic AI. <span class="text-text">I write about it here.</span>
     </p>
 
     <div class="reveal mt-10 flex flex-wrap items-center gap-3">
-      <a href="#work" class="group inline-flex items-center gap-2 px-5 py-3 bg-text text-bg rounded-md text-[0.88rem] font-medium hover:bg-white transition">
-        Selected work
+      <a href="#writing" class="group inline-flex items-center gap-2 px-5 py-3 bg-text text-bg rounded-md text-[0.88rem] font-medium hover:bg-white transition">
+        Read writing
         <span class="group-hover:translate-x-0.5 transition-transform">→</span>
       </a>
-      <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 border border-border-2 text-text rounded-md text-[0.88rem] hover:border-border-3 hover:bg-surface transition">
+      <a href="{{ROOT}}feed.xml" class="inline-flex items-center gap-2 px-5 py-3 border border-border-2 text-text rounded-md text-[0.88rem] hover:border-border-3 hover:bg-surface transition">
+        Subscribe (RSS)
+      </a>
+      <a href="#contact" class="inline-flex items-center gap-2 px-4 py-3 text-muted hover:text-text text-[0.88rem] transition">
         Get in touch
       </a>
-      <span class="ml-2 text-muted-2 font-mono text-[0.74rem] tabnum hidden md:inline">~ replies within 24h</span>
     </div>
 
     <div class="reveal mt-24 md:mt-32 pt-6 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 font-mono text-[0.74rem]">
@@ -53,6 +55,34 @@
   </div>
 </section>
 
+<!-- ─────────────  WRITING  ───────────── -->
+<section id="writing" class="border-t border-border bg-bg-2/40">
+  <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
+
+    <div class="flex items-end justify-between mb-12 md:mb-16">
+      <div>
+        <p class="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-muted-2 mb-3">
+          <span class="section-num">01 / 04</span> &nbsp;&middot;&nbsp; Writing
+        </p>
+        <h2 class="font-medium tracking-[-0.025em] leading-[1]" style="font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500;">
+          Notes on building this stuff.
+        </h2>
+        <p class="mt-4 text-muted text-[1rem] leading-[1.6] max-w-[36rem]">
+          Field notes from production LLM work &mdash; what breaks, what holds, and the math that decides which.
+        </p>
+      </div>
+      <a href="{{ROOT}}feed.xml" class="hidden md:inline-flex items-center gap-1.5 font-mono text-[0.78rem] text-muted hover:text-text transition group">
+        RSS
+        <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
+      </a>
+    </div>
+
+    <ul class="border-t border-border">
+{{WRITING_LIST}}
+    </ul>
+  </div>
+</section>
+
 <!-- ─────────────  SELECTED WORK  ───────────── -->
 <section id="work" class="border-t border-border">
   <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
@@ -60,17 +90,21 @@
     <div class="flex items-end justify-between mb-12 md:mb-16">
       <div>
         <p class="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-muted-2 mb-3">
-          <span class="section-num">01 / 04</span> &nbsp;&middot;&nbsp; Selected work
+          <span class="section-num">02 / 04</span> &nbsp;&middot;&nbsp; Selected work
         </p>
         <h2 class="font-medium tracking-[-0.025em] leading-[1]" style="font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500;">
-          Recent projects.
+          Open-source projects.
         </h2>
       </div>
+      <a href="https://github.com/tonyc973?tab=repositories" class="hidden md:inline-flex items-center gap-1.5 font-mono text-[0.78rem] text-muted hover:text-text transition group">
+        All on GitHub
+        <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
+      </a>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-      <a href="#" class="card group block border border-border rounded-lg bg-surface/40 p-7">
+      <a href="https://github.com/tonyc973/Context-Kit" class="card group block border border-border rounded-lg bg-surface/40 p-7">
         <div class="flex items-start justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="font-mono text-[0.7rem] text-muted-2 tabnum">001</span>
@@ -80,14 +114,14 @@
         </div>
         <h3 class="mt-7 text-[1.3rem] font-medium tracking-tight">Context-Kit</h3>
         <p class="mt-2 text-muted text-[0.95rem] leading-[1.55]">
-          Persistent memory for LLM agents, modeled on human cognition. Seven typed stores with their own update strategies and a query router that reads only what matters.
+          Persistent memory for LLM agents, modeled on human cognition. Seven typed stores &mdash; episodic, semantic, procedural, entity, working, summary, buffer &mdash; each with its own update strategy. 44 tests, live Streamlit demo.
         </p>
         <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-[0.72rem] text-muted-2">
-          <span>Python</span><span>·</span><span>FastAPI</span><span>·</span><span>Pydantic</span><span>·</span><span>FAISS</span>
+          <span>Python</span><span>·</span><span>ChromaDB</span><span>·</span><span>OpenAI</span><span>·</span><span>Streamlit</span>
         </div>
       </a>
 
-      <a href="#" class="card group block border border-border rounded-lg bg-surface/40 p-7">
+      <a href="https://github.com/tonyc973/semantic-drift-sentinel" class="card group block border border-border rounded-lg bg-surface/40 p-7">
         <div class="flex items-start justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="font-mono text-[0.7rem] text-muted-2 tabnum">002</span>
@@ -97,14 +131,14 @@
         </div>
         <h3 class="mt-7 text-[1.3rem] font-medium tracking-tight">Drift Sentinel</h3>
         <p class="mt-2 text-muted text-[0.95rem] leading-[1.55]">
-          Middleware that detects distribution shift in MCP tool responses before it cascades through your agent. Embedding-based PSI scoring with graded alerts. Two-line integration.
+          Drop-in MCP middleware that catches silent tool-output drift &mdash; when Slack reorders threads, an API renames a field, a DB schema shifts &mdash; before it cascades through your agent chain. SBERT embeddings + PSI on the projected distribution.
         </p>
         <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-[0.72rem] text-muted-2">
-          <span>MCP</span><span>·</span><span>Sentence-BERT</span><span>·</span><span>PSI</span>
+          <span>MCP</span><span>·</span><span>Sentence-BERT</span><span>·</span><span>PSI</span><span>·</span><span>SQLite</span>
         </div>
       </a>
 
-      <a href="#" class="card group block border border-border rounded-lg bg-surface/40 p-7">
+      <a href="https://github.com/tonyc973/AgentForge" class="card group block border border-border rounded-lg bg-surface/40 p-7">
         <div class="flex items-start justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="font-mono text-[0.7rem] text-muted-2 tabnum">003</span>
@@ -121,7 +155,7 @@
         </div>
       </a>
 
-      <a href="#" class="card group block border border-border rounded-lg bg-surface/40 p-7">
+      <a href="https://github.com/tonyc973/RepoDoctor" class="card group block border border-border rounded-lg bg-surface/40 p-7">
         <div class="flex items-start justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="font-mono text-[0.7rem] text-muted-2 tabnum">004</span>
@@ -131,7 +165,7 @@
         </div>
         <h3 class="mt-7 text-[1.3rem] font-medium tracking-tight">RepoDoctor</h3>
         <p class="mt-2 text-muted text-[0.95rem] leading-[1.55]">
-          An autonomous code-audit swarm. Navigator + Analyst agents on AutoGen 0.4, tool access through MCP, walking a repository and producing a structured improvements report.
+          An autonomous code-audit swarm. Navigator + Analyst agents on AutoGen 0.4, tool access through MCP, walking a remote repository and producing a structured improvements report.
         </p>
         <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-[0.72rem] text-muted-2">
           <span>AutoGen 0.4</span><span>·</span><span>MCP</span><span>·</span><span>Audit</span>
@@ -141,33 +175,8 @@
   </div>
 </section>
 
-<!-- ─────────────  WRITING  ───────────── -->
-<section id="writing" class="border-t border-border bg-bg-2/40">
-  <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
-
-    <div class="flex items-end justify-between mb-12 md:mb-16">
-      <div>
-        <p class="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-muted-2 mb-3">
-          <span class="section-num">02 / 04</span> &nbsp;&middot;&nbsp; Writing
-        </p>
-        <h2 class="font-medium tracking-[-0.025em] leading-[1]" style="font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 500;">
-          Notes on building this stuff.
-        </h2>
-      </div>
-      <a href="{{ROOT}}feed.xml" class="hidden md:inline-flex items-center gap-1.5 font-mono text-[0.78rem] text-muted hover:text-text transition group">
-        RSS
-        <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
-      </a>
-    </div>
-
-    <ul class="border-t border-border">
-{{WRITING_LIST}}
-    </ul>
-  </div>
-</section>
-
 <!-- ─────────────  EXPERIENCE  ───────────── -->
-<section id="experience" class="border-t border-border">
+<section id="experience" class="border-t border-border bg-bg-2/40">
   <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
 
     <div class="mb-12 md:mb-16">
@@ -248,16 +257,19 @@
 
     <h2 class="font-medium tracking-[-0.035em] leading-[0.98] max-w-[18ch]"
         style="font-size: clamp(2.2rem, 6.5vw, 5rem); font-weight: 500;">
-      Have a hard reliability problem?
+      Reply, disagree, hire.
     </h2>
-    <p class="mt-8 text-muted text-[1.05rem] leading-[1.6] max-w-[34rem]">
-      I'm currently open to AI engineering roles &mdash; full-time or contract, hybrid in Bucharest or remote on European hours. The shorter the email, the faster the reply.
+    <p class="mt-8 text-muted text-[1.05rem] leading-[1.6] max-w-[36rem]">
+      If a post here was useful, wrong, or worth arguing about &mdash; email me. I'm also open to AI engineering roles, full-time or contract, hybrid in Bucharest or remote on European hours. The shorter the email, the faster the reply.
     </p>
 
     <div class="mt-12 flex flex-wrap items-center gap-3">
       <a href="mailto:hello@chirilus.dev" class="group inline-flex items-center gap-2 px-6 py-3.5 bg-accent text-bg rounded-md text-[0.92rem] font-medium hover:bg-accent-2 transition">
         hello@chirilus.dev
         <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+      </a>
+      <a href="{{ROOT}}feed.xml" class="inline-flex items-center gap-2 px-5 py-3.5 border border-border-2 rounded-md text-[0.88rem] hover:border-border-3 hover:bg-surface transition">
+        Subscribe (RSS)
       </a>
     </div>
 

@@ -179,20 +179,30 @@ def pygments_css() -> str:
 def render_writing_list(posts: list[Post]) -> str:
     rows = []
     for p in posts:
+        summary_html = (
+            f'\n          <p class="mt-1.5 text-muted text-[0.92rem] leading-[1.55] max-w-[58ch]">{p.summary}</p>'
+            if p.summary else ''
+        )
         rows.append(
             f'      <li class="border-b border-border">\n'
-            f'        <a href="{p.url_path}" class="row grid grid-cols-[64px_1fr_auto] '
-            f'md:grid-cols-[88px_1fr_120px_auto] items-baseline gap-x-5 px-3 -mx-3 py-5">\n'
-            f'          <span class="font-mono text-[0.74rem] text-muted-2 tabnum">{p.date_list}</span>\n'
-            f'          <span class="row-title text-[1rem] md:text-[1.05rem] text-text '
-            f'font-medium tracking-tight">{p.title}</span>\n'
-            f'          <span class="hidden md:block font-mono text-[0.72rem] text-muted-2">{p.tag}</span>\n'
-            f'          <span class="row-arrow font-mono text-[0.85rem] text-muted">→</span>\n'
+            f'        <a href="{p.url_path}" class="row block px-3 -mx-3 py-6 grid grid-cols-[1fr_auto] gap-x-5 items-start">\n'
+            f'          <div>\n'
+            f'            <div class="flex items-center gap-2.5 font-mono text-[0.72rem] text-muted-2 mb-2">\n'
+            f'              <time class="tabnum" datetime="{p.date_iso}">{p.date_human}</time>\n'
+            f'              <span>·</span>\n'
+            f'              <span class="text-accent uppercase tracking-[0.16em]">{p.tag}</span>\n'
+            f'              <span>·</span>\n'
+            f'              <span class="tabnum">{p.reading_time} min</span>\n'
+            f'            </div>\n'
+            f'            <h3 class="row-title text-[1.1rem] md:text-[1.2rem] text-text font-medium tracking-tight leading-snug">{p.title}</h3>'
+            f'{summary_html}\n'
+            f'          </div>\n'
+            f'          <span class="row-arrow font-mono text-[0.95rem] text-muted mt-1.5">→</span>\n'
             f'        </a>\n'
             f'      </li>'
         )
     return "\n".join(rows) if rows else (
-        '      <li class="py-5 font-mono text-[0.85rem] text-muted-2">No posts yet.</li>'
+        '      <li class="py-8 font-mono text-[0.85rem] text-muted-2">No posts yet — first one is being drafted.</li>'
     )
 
 
