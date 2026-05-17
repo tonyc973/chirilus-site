@@ -1,0 +1,51 @@
+<!-- ─────────────  POST HEADER  ───────────── -->
+<section class="relative overflow-hidden border-b border-border">
+  <div class="absolute inset-0 grid-bg pointer-events-none opacity-60"></div>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+
+  <div class="relative max-w-[760px] mx-auto w-full px-6 md:px-10 pt-32 pb-16">
+
+    <a href="{{ROOT}}#writing" class="reveal inline-flex items-center gap-2 font-mono text-[0.74rem] text-muted hover:text-text transition group">
+      <span class="group-hover:-translate-x-0.5 transition-transform">←</span>
+      Back to writing
+    </a>
+
+    <div class="reveal mt-8 flex items-center gap-3 font-mono text-[0.72rem] text-muted-2">
+      <time datetime="{{DATE_ISO}}" class="tabnum">{{DATE_HUMAN}}</time>
+      <span>·</span>
+      <span class="text-accent uppercase tracking-[0.16em]">{{TAG}}</span>
+      <span>·</span>
+      <span class="tabnum">{{READING_TIME}} min read</span>
+    </div>
+
+    <h1 class="reveal mt-5 font-medium tracking-[-0.025em] leading-[1.05]"
+        style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500;">
+      {{POST_TITLE}}
+    </h1>
+
+    <p class="reveal mt-6 text-muted text-[1.05rem] leading-[1.6] max-w-[36rem]">
+      {{SUMMARY}}
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────  POST BODY  ───────────── -->
+<article class="relative">
+  <div class="max-w-[760px] mx-auto px-6 md:px-10 py-16 md:py-20">
+    <div class="prose">
+{{POST_CONTENT}}
+    </div>
+
+    <hr class="my-16 border-border">
+
+    <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-[0.78rem]">
+      <a href="{{ROOT}}#writing" class="text-muted hover:text-text transition group inline-flex items-center gap-2">
+        <span class="group-hover:-translate-x-0.5 transition-transform">←</span>
+        All posts
+      </a>
+      <a href="mailto:hello@chirilus.dev?subject=Re: {{POST_TITLE}}" class="text-muted hover:text-accent transition">
+        Reply by email →
+      </a>
+    </div>
+  </div>
+</article>
