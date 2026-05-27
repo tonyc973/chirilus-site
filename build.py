@@ -42,7 +42,7 @@ SITE_ROOT = os.environ.get("SITE_ROOT", "/")
 if not SITE_ROOT.endswith("/"):
     SITE_ROOT += "/"
 
-SITE_URL = os.environ.get("SITE_URL", "https://chirilus.dev").rstrip("/")
+SITE_URL = os.environ.get("SITE_URL", "https://roglia.ro").rstrip("/")
 SITE_TITLE = "Antonie Chirilus — Reliable LLM systems"
 SITE_DESCRIPTION = (
     "Antonie Chirilus, R&D Engineer at Keysight Technologies. "
@@ -165,45 +165,70 @@ def parse_post(path: Path) -> Post:
 
 
 def pygments_css() -> str:
-    """Generate Pygments CSS scoped to .highlight, tuned for the site's dark theme."""
-    formatter = HtmlFormatter(style="monokai", cssclass="highlight")
-    base = formatter.get_style_defs(".highlight")
-    # Override background to match site surface colour, remove default padding.
+    """Generate Pygments CSS for both light and dark themes.
+
+    Each theme's rules are scoped to a :root[data-theme=...] selector so the
+    correct palette activates with the page's theme toggle. Dark is also the
+    fallback when no theme attribute is set.
+    """
+    dark_fmt = HtmlFormatter(style="monokai", cssclass="highlight")
+    light_fmt = HtmlFormatter(style="friendly", cssclass="highlight")
+
+    dark_rules = dark_fmt.get_style_defs(":root[data-theme='dark'] .highlight")
+    light_rules = light_fmt.get_style_defs(":root[data-theme='light'] .highlight")
+    default_rules = dark_fmt.get_style_defs(":root:not([data-theme]) .highlight")
+
     overrides = (
         ".highlight { background: transparent !important; }\n"
+        ".highlight pre { background: transparent !important; margin: 0; padding: 0; }\n"
         ".prose .highlight { background: transparent; }\n"
     )
-    return overrides + base
+    return overrides + default_rules + "\n" + dark_rules + "\n" + light_rules
 
 
 def render_writing_list(posts: list[Post]) -> str:
-    rows = []
-    for p in posts:
-        summary_html = (
-            f'\n          <p class="mt-1.5 text-muted text-[0.92rem] leading-[1.55] max-w-[58ch]">{p.summary}</p>'
-            if p.summary else ''
+    """Render the writing list in an editorial layout.
+
+    The most recent post is given a larger, lead-essay treatment; the rest
+    appear as compact entries underneath.
+    """
+    if not posts:
+        return (
+            '      <li class="py-10 font-mono text-[0.85rem] text-text-3">'
+            'No essays yet — the first is being drafted.</li>'
         )
+
+    def issue_number(idx: int) -> str:
+        return f"N° {len(posts) - idx:02d}"
+
+    rows: list[str] = []
+    for i, p in enumerate(posts):
+        summary_html = (
+            f'\n            <p class="entry-dek">{p.summary}</p>' if p.summary else ''
+        )
+        is_lead = (i == 0)
+        cls = "entry entry--lead" if is_lead else "entry"
         rows.append(
-            f'      <li class="border-b border-border">\n'
-            f'        <a href="{p.url_path}" class="row block px-3 -mx-3 py-6 grid grid-cols-[1fr_auto] gap-x-5 items-start">\n'
-            f'          <div>\n'
-            f'            <div class="flex items-center gap-2.5 font-mono text-[0.72rem] text-muted-2 mb-2">\n'
-            f'              <time class="tabnum" datetime="{p.date_iso}">{p.date_human}</time>\n'
-            f'              <span>·</span>\n'
-            f'              <span class="text-accent uppercase tracking-[0.16em]">{p.tag}</span>\n'
-            f'              <span>·</span>\n'
-            f'              <span class="tabnum">{p.reading_time} min</span>\n'
-            f'            </div>\n'
-            f'            <h3 class="row-title text-[1.1rem] md:text-[1.2rem] text-text font-medium tracking-tight leading-snug">{p.title}</h3>'
-            f'{summary_html}\n'
+            f'      <li class="{cls}">\n'
+            f'        <a href="{p.url_path}" class="entry-link">\n'
+            f'          <div class="entry-meta">\n'
+            f'            <span class="entry-issue">{issue_number(i)}</span>\n'
+            f'            <span class="entry-sep">·</span>\n'
+            f'            <time class="entry-date tabnum" datetime="{p.date_iso}">{p.date_human}</time>\n'
+            f'            <span class="entry-sep">·</span>\n'
+            f'            <span class="entry-tag">{p.tag}</span>\n'
+            f'            <span class="entry-sep">·</span>\n'
+            f'            <span class="entry-time tabnum">{p.reading_time} min</span>\n'
             f'          </div>\n'
-            f'          <span class="row-arrow font-mono text-[0.95rem] text-muted mt-1.5">→</span>\n'
+            f'          <div class="entry-body">\n'
+            f'            <h3 class="entry-title">{p.title}</h3>'
+            f'{summary_html}\n'
+            f'            <span class="entry-readmore">Read essay <span class="arrow">→</span></span>\n'
+            f'          </div>\n'
             f'        </a>\n'
             f'      </li>'
         )
-    return "\n".join(rows) if rows else (
-        '      <li class="py-8 font-mono text-[0.85rem] text-muted-2">No posts yet — first one is being drafted.</li>'
-    )
+    return "\n".join(rows)
 
 
 def render_feed(posts: list[Post]) -> str:

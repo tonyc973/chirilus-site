@@ -1,50 +1,65 @@
 <!-- ─────────────  POST HEADER  ───────────── -->
-<section class="relative overflow-hidden border-b border-border">
+<section class="relative overflow-hidden" style="border-bottom: 1px solid var(--rule);">
   <div class="absolute inset-0 grid-bg pointer-events-none opacity-60"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+  <div class="hairline-top"></div>
 
-  <div class="relative max-w-[760px] mx-auto w-full px-6 md:px-10 pt-32 pb-16">
+  <div class="relative max-w-[760px] mx-auto w-full px-6 md:px-10 pt-32 pb-16 md:pt-36">
 
-    <a href="{{ROOT}}#writing" class="reveal inline-flex items-center gap-2 font-mono text-[0.74rem] text-muted hover:text-text transition group">
+    <a href="{{ROOT}}#writing" class="reveal inline-flex items-center gap-2 mono group" style="font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase;">
       <span class="group-hover:-translate-x-0.5 transition-transform">←</span>
-      Back to writing
+      Back to essays
     </a>
 
-    <div class="reveal mt-8 flex items-center gap-3 font-mono text-[0.72rem] text-muted-2">
+    <div class="reveal mt-10 flex items-center flex-wrap gap-x-3 gap-y-1 mono" style="font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.02em;">
+      <span style="color: var(--accent); letter-spacing: 0.1em;">Essay</span>
+      <span style="color: var(--text-4);">·</span>
       <time datetime="{{DATE_ISO}}" class="tabnum">{{DATE_HUMAN}}</time>
-      <span>·</span>
-      <span class="text-accent uppercase tracking-[0.16em]">{{TAG}}</span>
-      <span>·</span>
+      <span style="color: var(--text-4);">·</span>
+      <span style="color: var(--text-2); text-transform: uppercase; letter-spacing: 0.18em;">{{TAG}}</span>
+      <span style="color: var(--text-4);">·</span>
       <span class="tabnum">{{READING_TIME}} min read</span>
     </div>
 
-    <h1 class="reveal mt-5 font-medium tracking-[-0.025em] leading-[1.05]"
-        style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 500;">
+    <h1 class="reveal display-serif mt-6" style="font-size: clamp(2.1rem, 5.2vw, 3.4rem); line-height: 1.05; letter-spacing: -0.022em; max-width: 22ch;">
       {{POST_TITLE}}
     </h1>
 
-    <p class="reveal mt-6 text-muted text-[1.05rem] leading-[1.6] max-w-[36rem]">
+    <p class="reveal body-serif mt-7" style="font-size: 1.18rem; line-height: 1.55; color: var(--text-2); max-width: 38rem;">
       {{SUMMARY}}
     </p>
+
+    <div class="reveal mt-10 flex items-center gap-3" style="font-family: 'Fraunces', Georgia, serif; font-style: italic; font-variation-settings: 'opsz' 14, 'SOFT' 60, 'wght' 440; font-size: 0.95rem; color: var(--text-2);">
+      <span style="display: inline-block; width: 24px; height: 1px; background: var(--accent);"></span>
+      <span>by Antonie Chirilus</span>
+    </div>
   </div>
 </section>
 
 <!-- ─────────────  POST BODY  ───────────── -->
-<article class="relative">
+<article class="post-body relative">
   <div class="max-w-[760px] mx-auto px-6 md:px-10 py-16 md:py-20">
     <div class="prose">
 {{POST_CONTENT}}
     </div>
 
-    <hr class="my-16 border-border">
+    <hr class="my-16" style="border: 0; border-top: 1px solid var(--rule);">
 
-    <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-[0.78rem]">
-      <a href="{{ROOT}}#writing" class="text-muted hover:text-text transition group inline-flex items-center gap-2">
+    <!-- Sign-off -->
+    <div class="display-italic" style="font-size: 1.15rem; color: var(--text-2); margin-top: 1rem;">
+      — Antonie<span style="color: var(--accent);">.</span>
+    </div>
+
+    <!-- Post nav -->
+    <div class="mt-16 flex flex-wrap items-center justify-between gap-4 mono" style="font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase;">
+      <a href="{{ROOT}}#writing" class="group inline-flex items-center gap-2" style="color: var(--text-2);">
         <span class="group-hover:-translate-x-0.5 transition-transform">←</span>
-        All posts
+        All essays
       </a>
-      <a href="mailto:hello@chirilus.dev?subject=Re: {{POST_TITLE}}" class="text-muted hover:text-accent transition">
-        Reply by email →
+      <a href="{{ROOT}}feed.xml" style="color: var(--text-2);">
+        Subscribe · RSS &nbsp;↗
+      </a>
+      <a href="mailto:hello@roglia.ro?subject=Re: {{POST_TITLE}}" style="color: var(--accent);">
+        Reply by email &nbsp;→
       </a>
     </div>
   </div>
