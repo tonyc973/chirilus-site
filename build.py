@@ -45,8 +45,8 @@ if not SITE_ROOT.endswith("/"):
 SITE_URL = os.environ.get("SITE_URL", "https://roglia.ro").rstrip("/")
 SITE_TITLE = "Antonie Chirilus — Reliable LLM systems"
 SITE_DESCRIPTION = (
-    "Antonie Chirilus, R&D Engineer at Keysight Technologies. "
-    "Building deterministic LLM systems: guided generation, validators, agents."
+    "Antonie Chirilus, R&D engineer. "
+    "I share my machine learning and LLMOps learnings here."
 )
 AUTHOR = "Antonie Chirilus"
 
