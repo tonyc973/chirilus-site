@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="fade" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="m"><rect width="64" height="64" fill="url(#fade)"/></mask>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0E0E10"/>
+  <g mask="url(#m)" stroke-width="3.4" stroke-linecap="round">
+    <path d="M45 32 L9 12" stroke="#9B7BFF"/>
+    <path d="M45 32 L8 22" stroke="#6B8AFF"/>
+    <path d="M45 32 L8 32" stroke="#5FD4FF"/>
+    <path d="M45 32 L8 42" stroke="#7CF0B0"/>
+    <path d="M45 32 L9 52" stroke="#FFB070"/>
+  </g>
+  <rect x="44.5" y="13" width="3.6" height="38" rx="1.8" fill="#FFFCF8"/>
+</svg>

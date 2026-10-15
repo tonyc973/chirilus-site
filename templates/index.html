@@ -1,283 +1,162 @@
-<!-- ─────────────  HERO  ───────────── -->
-<section id="top" class="relative overflow-hidden">
-  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
-  <div class="hairline-top"></div>
+<!-- ─────────────  CINEMATIC HERO — "the spectrometer"  ───────────── -->
+<section id="top" class="cinema-hero" aria-labelledby="hero-title">
+  <canvas id="hero-rays" class="cinema-hero__layer" aria-hidden="true"></canvas>
+  <div class="cinema-hero__fallback cinema-hero__layer" aria-hidden="true"></div>
+  <div class="cinema-hero__grain cinema-hero__layer" aria-hidden="true"></div>
+  <span class="hero-lambda" aria-hidden="true">λ 380–740 nm</span>
 
-  <div class="relative max-w-[1120px] mx-auto w-full px-6 md:px-10 pt-32 pb-20 md:pt-40 md:pb-24">
+  <div class="cinema-hero__inner">
+    <div class="hero-spacer-top"></div>
 
-    <h1 class="reveal display-serif" style="font-size: clamp(2.6rem, 7.6vw, 5.6rem); line-height: 0.96; max-width: 18ch;">
-      Where models<br>
-      meet <span class="display-italic" style="color: var(--accent);">reality.</span>
-    </h1>
+    <div class="hero-main">
+      <p class="hero-kicker reveal">Field notes on reliable LLM systems</p>
+      <h1 id="hero-title" class="hero-headline reveal" style="--d:1">
+        Where models<br>
+        meet <span class="lit-word">reality.</span>
+      </h1>
 
-    <p class="reveal body-serif mt-9" style="font-size: 1.18rem; line-height: 1.55; max-width: 38rem; color: var(--text-2);">
-      I&rsquo;m <span style="color: var(--text); font-weight: 500;">Antonie Chirilus</span>, R&amp;D engineer.
-      <span style="color: var(--text);">I share my machine learning and LLMOps learnings here.</span>
-    </p>
+      <p class="hero-intro reveal" style="--d:2">
+        I&rsquo;m <strong>Antonie Chirilus</strong>, AI Platform Engineer.
+        I write about running LLMs in production &mdash; inference, agents, and the parts nobody demos.
+      </p>
 
-    <div class="reveal mt-10 flex flex-wrap items-center gap-3">
-      <a href="#writing" class="group inline-flex items-center gap-2 px-5 py-3 rounded-md mono" style="background: var(--text); color: var(--bg); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; transition: opacity 180ms ease;">
-        Read essays
-        <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-      </a>
-      <a href="#contact" class="inline-flex items-center gap-2 px-3 py-3 mono" style="color: var(--text-2); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;">
-        Get in touch &nbsp;→
-      </a>
-    </div>
-
-    <div class="reveal mt-24 md:mt-32 pt-6" style="border-top: 1px solid var(--rule);">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-6 mono" style="font-size: 0.72rem;">
-        <div>
-          <p style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.18em;">Role</p>
-          <p style="color: var(--text); margin-top: 6px;">R&amp;D · AI Engineer</p>
-        </div>
-        <div>
-          <p style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.18em;">Focus</p>
-          <p style="color: var(--text); margin-top: 6px;">LLM reliability, agents</p>
-        </div>
-        <div>
-          <p style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.18em;">Based</p>
-          <p style="color: var(--text); margin-top: 6px;">Bucharest, RO</p>
-        </div>
-        <div>
-          <p style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.18em;">Stack</p>
-          <p style="color: var(--text); margin-top: 6px;">Python · llama.cpp · MCP</p>
-        </div>
+      <div class="hero-cta reveal" style="--d:3">
+        <a href="#writing" class="hero-link">Read essays <span class="arrow" aria-hidden="true">→</span></a>
+        <a href="#work" class="hero-link hero-link--muted">See projects <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
+
+    <div class="hero-spacer-bot"></div>
+
+    <dl class="hero-credits reveal" style="--d:4">
+      <div><dt>Role</dt><dd>AI Platform Engineer</dd></div>
+      <div><dt>Focus</dt><dd>LLM serving, evals, agents</dd></div>
+      <div><dt>Based</dt><dd>Bucharest, RO</dd></div>
+      <div><dt>Stack</dt><dd><ul class="inline-list"><li>Python</li><li>llama.cpp</li><li>MCP</li></ul></dd></div>
+    </dl>
   </div>
+
+  <div class="hero-horizon" aria-hidden="true"></div>
 </section>
 
-<!-- ─────────────  WRITING  ───────────── -->
-<section id="writing" class="relative" style="border-top: 1px solid var(--rule);">
-  <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
-
-    <header class="md:grid md:grid-cols-12 md:gap-x-10 mb-12 md:mb-16">
-      <div class="md:col-span-7">
-        <p class="section-eyebrow">
-          <span class="section-sigil">§</span>
-          <span>01 &nbsp;·&nbsp; Essays &amp; field notes</span>
-        </p>
-        <h2 class="display-serif mt-5" style="font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.022em;">
-          Notes on the unglamorous<br>
-          <span class="display-italic" style="color: var(--text-2);">half of agentic AI.</span>
-        </h2>
+<!-- ─────────────  ESSAYS  ───────────── -->
+<section id="writing" class="section section-dawn" aria-labelledby="writing-title">
+  <div class="wrap">
+    <header class="section-head section-head--split">
+      <div>
+        <p class="eyebrow"><span class="sigil" aria-hidden="true">§</span><span>01 &nbsp;·&nbsp; Essays</span></p>
+        <h2 id="writing-title" class="section-title">Notes on the unglamorous<br><em>half of agentic AI.</em></h2>
       </div>
-      <div class="md:col-span-5 md:pt-3 mt-6 md:mt-0">
-        <p class="body-serif" style="font-size: 1.05rem; line-height: 1.6; color: var(--text-2); max-width: 36rem;">
-          Field notes from production LLM work &mdash; what breaks, what holds, and the math that decides which.
-          New essays roughly every other week.
-        </p>
-      </div>
+      <p class="section-lede">
+        Field notes from production LLM work &mdash; what breaks, what holds, and the math that decides which.
+      </p>
     </header>
 
-    <ul class="entry-list" style="list-style: none; padding: 0; margin: 0;">
+    <ul class="entry-list">
 {{WRITING_LIST}}
     </ul>
   </div>
 </section>
 
-<!-- ─────────────  SELECTED WORK  ───────────── -->
-<section id="work" class="relative" style="border-top: 1px solid var(--rule); background: var(--bg-elev);">
-  <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
-
-    <header class="flex flex-wrap items-end justify-between gap-y-4 mb-12 md:mb-16">
+<!-- ─────────────  SELECTED WORK (rendered from projects.yml)  ───────────── -->
+<section id="work" class="section section--elev" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="section-head section-head--split">
       <div>
-        <p class="section-eyebrow">
-          <span class="section-sigil">§</span>
-          <span>02 &nbsp;·&nbsp; Selected work</span>
-        </p>
-        <h2 class="display-serif mt-5" style="font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.022em;">
-          Open-source <span class="display-italic" style="color: var(--text-2);">projects.</span>
-        </h2>
+        <p class="eyebrow"><span class="sigil" aria-hidden="true">§</span><span>02 &nbsp;·&nbsp; Selected work</span></p>
+        <h2 id="work-title" class="section-title">Things I&rsquo;ve built<br><em>in the open.</em></h2>
       </div>
-      <a href="https://github.com/tonyc973?tab=repositories" class="inline-flex items-center gap-1.5 mono" style="font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase;">
-        All on GitHub &nbsp;↗
-      </a>
+      <div class="section-lede">
+        <p>Projects I build to understand a problem properly &mdash; agent infrastructure, retrieval, security and evaluation. Every card links to the code.</p>
+        <p class="lede-link"><a href="https://github.com/tonyc973?tab=repositories" class="text-link">All repositories on GitHub <span aria-hidden="true">↗</span></a></p>
+      </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-      <a href="https://github.com/tonyc973/Context-Kit" class="card group block rounded-lg p-7" style="border: 1px solid var(--border); background: var(--surface);">
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-center gap-3 mono" style="font-size: 0.7rem;">
-            <span class="tabnum" style="color: var(--text-3);">001</span>
-            <span style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.16em;">Open source</span>
-          </div>
-          <span class="card-arrow text-lg" style="color: var(--text-3);">↗</span>
-        </div>
-        <h3 class="display-serif mt-7" style="font-size: 1.5rem; letter-spacing: -0.012em;">Context-Kit</h3>
-        <p class="body-serif mt-2" style="font-size: 1.02rem; line-height: 1.55; color: var(--text-2);">
-          Persistent memory for LLM agents, modeled on human cognition. Seven typed stores &mdash; episodic, semantic, procedural, entity, working, summary, buffer &mdash; each with its own update strategy. 44 tests, live Streamlit demo.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 mono" style="font-size: 0.7rem; color: var(--text-3);">
-          <span>Python</span><span>·</span><span>ChromaDB</span><span>·</span><span>OpenAI</span><span>·</span><span>Streamlit</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/tonyc973/semantic-drift-sentinel" class="card group block rounded-lg p-7" style="border: 1px solid var(--border); background: var(--surface);">
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-center gap-3 mono" style="font-size: 0.7rem;">
-            <span class="tabnum" style="color: var(--text-3);">002</span>
-            <span style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.16em;">Open source</span>
-          </div>
-          <span class="card-arrow text-lg" style="color: var(--text-3);">↗</span>
-        </div>
-        <h3 class="display-serif mt-7" style="font-size: 1.5rem; letter-spacing: -0.012em;">Drift Sentinel</h3>
-        <p class="body-serif mt-2" style="font-size: 1.02rem; line-height: 1.55; color: var(--text-2);">
-          Drop-in MCP middleware that catches silent tool-output drift &mdash; when Slack reorders threads, an API renames a field, a DB schema shifts &mdash; before it cascades through your agent chain. SBERT embeddings + PSI on the projected distribution.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 mono" style="font-size: 0.7rem; color: var(--text-3);">
-          <span>MCP</span><span>·</span><span>Sentence-BERT</span><span>·</span><span>PSI</span><span>·</span><span>SQLite</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/tonyc973/AgentForge" class="card group block rounded-lg p-7" style="border: 1px solid var(--border); background: var(--surface);">
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-center gap-3 mono" style="font-size: 0.7rem;">
-            <span class="tabnum" style="color: var(--text-3);">003</span>
-            <span style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.16em;">Open source</span>
-          </div>
-          <span class="card-arrow text-lg" style="color: var(--text-3);">↗</span>
-        </div>
-        <h3 class="display-serif mt-7" style="font-size: 1.5rem; letter-spacing: -0.012em;">AgentForge</h3>
-        <p class="body-serif mt-2" style="font-size: 1.02rem; line-height: 1.55; color: var(--text-2);">
-          A five-agent pipeline that turns a one-line requirement into a working CrewAI repo on GitHub. Architect, codegen, test-writer, reviewer with self-correction, deployer.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 mono" style="font-size: 0.7rem; color: var(--text-3);">
-          <span>CrewAI</span><span>·</span><span>GitHub API</span><span>·</span><span>Pytest</span>
-        </div>
-      </a>
-
-      <a href="https://github.com/tonyc973/RepoDoctor" class="card group block rounded-lg p-7" style="border: 1px solid var(--border); background: var(--surface);">
-        <div class="flex items-start justify-between gap-4">
-          <div class="flex items-center gap-3 mono" style="font-size: 0.7rem;">
-            <span class="tabnum" style="color: var(--text-3);">004</span>
-            <span style="color: var(--accent); text-transform: uppercase; letter-spacing: 0.16em;">Open source</span>
-          </div>
-          <span class="card-arrow text-lg" style="color: var(--text-3);">↗</span>
-        </div>
-        <h3 class="display-serif mt-7" style="font-size: 1.5rem; letter-spacing: -0.012em;">RepoDoctor</h3>
-        <p class="body-serif mt-2" style="font-size: 1.02rem; line-height: 1.55; color: var(--text-2);">
-          An autonomous code-audit swarm. Navigator + Analyst agents on AutoGen 0.4, tool access through MCP, walking a remote repository and producing a structured improvements report.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 mono" style="font-size: 0.7rem; color: var(--text-3);">
-          <span>AutoGen 0.4</span><span>·</span><span>MCP</span><span>·</span><span>Audit</span>
-        </div>
-      </a>
-    </div>
+{{PROJECTS}}
   </div>
 </section>
 
 <!-- ─────────────  EXPERIENCE  ───────────── -->
-<section id="experience" class="relative" style="border-top: 1px solid var(--rule);">
-  <div class="max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
-
-    <header class="mb-12 md:mb-16">
-      <p class="section-eyebrow">
-        <span class="section-sigil">§</span>
-        <span>03 &nbsp;·&nbsp; Experience</span>
-      </p>
-      <h2 class="display-serif mt-5" style="font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.02; letter-spacing: -0.022em;">
-        Where the hours <span class="display-italic" style="color: var(--text-2);">have gone.</span>
-      </h2>
+<section id="experience" class="section" aria-labelledby="experience-title">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow"><span class="sigil" aria-hidden="true">§</span><span>03 &nbsp;·&nbsp; Experience</span></p>
+      <h2 id="experience-title" class="section-title">Where the hours <em>have gone.</em></h2>
     </header>
 
-    <ol style="list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule);">
-
-      <li class="grid grid-cols-12 gap-x-6 py-7" style="border-bottom: 1px solid var(--rule);">
-        <div class="col-span-12 md:col-span-3 mono tabnum" style="font-size: 0.78rem; color: var(--text-3);">
-          2025.10 — <span style="color: var(--accent);">now</span>
+    <ol class="timeline">
+      <li>
+        <p class="tl-when tabnum">2026.09 — <span class="now">now</span></p>
+        <div>
+          <h3 class="tl-role">AI Platform Engineer</h3>
+          <p class="tl-org">Bucharest</p>
         </div>
-        <div class="col-span-12 md:col-span-5 mt-1.5 md:mt-0">
-          <p class="display-serif" style="font-size: 1.2rem; letter-spacing: -0.012em;">R&amp;D Engineer · AI</p>
-          <p class="body-serif" style="font-size: 0.96rem; color: var(--text-2); margin-top: 2px;">Keysight Technologies · Bucharest</p>
-        </div>
-        <p class="col-span-12 md:col-span-4 mt-2 md:mt-0 body-serif" style="font-size: 0.98rem; line-height: 1.55; color: var(--text-2);">
-          Building a local AI assistant that lets users configure a networking platform in plain natural language. On-device inference with llama.cpp.
-        </p>
+        <p class="tl-desc">Building the internal platform for serving and evaluating LLMs.</p>
       </li>
-
-      <li class="grid grid-cols-12 gap-x-6 py-7" style="border-bottom: 1px solid var(--rule);">
-        <div class="col-span-12 md:col-span-3 mono tabnum" style="font-size: 0.78rem; color: var(--text-3);">
-          2025.06 — 2025.09
+      <li>
+        <p class="tl-when tabnum">2025.10 — 2026</p>
+        <div>
+          <h3 class="tl-role">R&amp;D Engineer · AI</h3>
+          <p class="tl-org">Keysight Technologies · Bucharest</p>
         </div>
-        <div class="col-span-12 md:col-span-5 mt-1.5 md:mt-0">
-          <p class="display-serif" style="font-size: 1.2rem; letter-spacing: -0.012em;">AI Engineer · Intern</p>
-          <p class="body-serif" style="font-size: 0.96rem; color: var(--text-2); margin-top: 2px;">Keysight Technologies</p>
-        </div>
-        <p class="col-span-12 md:col-span-4 mt-2 md:mt-0 body-serif" style="font-size: 0.98rem; line-height: 1.55; color: var(--text-2);">
-          Production RAG over Keysight&rsquo;s audit corpus. Function-calling agents on Azure OpenAI, retrieval through Azure Cognitive Search, FastAPI.
-        </p>
+        <p class="tl-desc">Built a local AI assistant that lets users configure a networking platform in natural language. On-device inference with llama.cpp.</p>
       </li>
-
-      <li class="grid grid-cols-12 gap-x-6 py-7" style="border-bottom: 1px solid var(--rule);">
-        <div class="col-span-12 md:col-span-3 mono tabnum" style="font-size: 0.78rem; color: var(--text-3);">
-          2024.09 — 2025.02
+      <li>
+        <p class="tl-when tabnum">2025.06 — 2025.09</p>
+        <div>
+          <h3 class="tl-role">AI Engineer · Intern</h3>
+          <p class="tl-org">Keysight Technologies</p>
         </div>
-        <div class="col-span-12 md:col-span-5 mt-1.5 md:mt-0">
-          <p class="display-serif" style="font-size: 1.2rem; letter-spacing: -0.012em;">ML Engineer · Contract</p>
-          <p class="body-serif" style="font-size: 0.96rem; color: var(--text-2); margin-top: 2px;">Roglia SRL · Remote</p>
-        </div>
-        <p class="col-span-12 md:col-span-4 mt-2 md:mt-0 body-serif" style="font-size: 0.98rem; line-height: 1.55; color: var(--text-2);">
-          Custom AI chatbot for public institutions. CrewAI, LangChain, Voiceflow, Groq + OpenAI inference, Grafana for observability.
-        </p>
+        <p class="tl-desc">Production RAG over Keysight&rsquo;s audit corpus. Function-calling agents on Azure OpenAI, retrieval through Azure AI Search, FastAPI.</p>
       </li>
-
-      <li class="grid grid-cols-12 gap-x-6 py-7">
-        <div class="col-span-12 md:col-span-3 mono tabnum" style="font-size: 0.78rem; color: var(--text-3);">
-          2022 — 2026
+      <li>
+        <p class="tl-when tabnum">2024.09 — 2025.02</p>
+        <div>
+          <h3 class="tl-role">ML Engineer · Contract</h3>
+          <p class="tl-org">Roglia SRL · Remote</p>
         </div>
-        <div class="col-span-12 md:col-span-5 mt-1.5 md:mt-0">
-          <p class="display-serif" style="font-size: 1.2rem; letter-spacing: -0.012em;">B.Sc Computer Science</p>
-          <p class="body-serif" style="font-size: 0.96rem; color: var(--text-2); margin-top: 2px;">University of Bucharest</p>
+        <p class="tl-desc">Custom AI chatbot for public institutions. CrewAI, LangChain, Voiceflow, Groq + OpenAI inference, Grafana for observability.</p>
+      </li>
+      <li>
+        <p class="tl-when tabnum">2022 — 2026</p>
+        <div>
+          <h3 class="tl-role">BSc Computer Science</h3>
+          <p class="tl-org">University of Bucharest</p>
         </div>
-        <p class="col-span-12 md:col-span-4 mt-2 md:mt-0 body-serif" style="font-size: 0.98rem; line-height: 1.55; color: var(--text-2);">
-          Finishing this year. Prior: several years of mathematical olympiad at the national stage.
-        </p>
+        <p class="tl-desc">Before that: several years of mathematical olympiad at the national stage.</p>
       </li>
     </ol>
   </div>
 </section>
 
 <!-- ─────────────  CONTACT  ───────────── -->
-<section id="contact" class="relative overflow-hidden" style="border-top: 1px solid var(--rule);">
-  <div class="absolute inset-0 grid-bg pointer-events-none opacity-60"></div>
+<section id="contact" class="section contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <p class="eyebrow"><span class="sigil" aria-hidden="true">§</span><span>04 &nbsp;·&nbsp; Correspondence</span></p>
 
-  <div class="relative max-w-[1120px] mx-auto px-6 md:px-10 py-24 md:py-32">
-
-    <p class="section-eyebrow">
-      <span class="section-sigil">§</span>
-      <span>04 &nbsp;·&nbsp; Correspondence</span>
+    <h2 id="contact-title" class="contact-title">Reply, disagree, <em>collaborate.</em></h2>
+    <p class="contact-lede">
+      If an essay here was useful, wrong, or worth arguing about &mdash; email me. Happy to compare notes on LLM inference, agents and AI platform work.
+      <strong>The shorter the email, the faster the reply.</strong>
     </p>
 
-    <h2 class="display-serif mt-5" style="font-size: clamp(2.4rem, 6.4vw, 4.8rem); line-height: 1; letter-spacing: -0.028em; max-width: 14ch;">
-      Reply, disagree, <span class="display-italic" style="color: var(--accent);">hire.</span>
-    </h2>
-    <p class="body-serif mt-8" style="font-size: 1.12rem; line-height: 1.55; max-width: 38rem; color: var(--text-2);">
-      If a post here was useful, wrong, or worth arguing about &mdash; email me. I&rsquo;m also open to AI engineering roles, full-time or contract, hybrid in Bucharest or remote on European hours.
-      <span style="color: var(--text);">The shorter the email, the faster the reply.</span>
-    </p>
-
-    <div class="mt-10 flex flex-wrap items-center gap-3">
-      <a href="mailto:hello@roglia.ro" class="group inline-flex items-center gap-2 px-5 py-3 rounded-md mono" style="background: var(--accent); color: var(--bg); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;">
-        hello@roglia.ro
-        <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-      </a>
+    <div class="contact-actions">
+      <a href="mailto:{{EMAIL}}" class="button button--email">{{EMAIL}} <span class="arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="button button--ghost" data-copy="{{EMAIL}}">Copy address</button>
     </div>
 
-    <div class="mt-20 pt-8 grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-6 mono" style="border-top: 1px solid var(--rule); font-size: 0.78rem;">
-      <a href="https://www.linkedin.com/in/antonie-chirilus-473a5b251/" class="group flex flex-col gap-1.5">
-        <span style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.66rem;">LinkedIn</span>
-        <span style="color: var(--text);" class="group-hover:[color:var(--accent)] transition-colors">/antonie-chirilus &nbsp;↗</span>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/antonie-chirilus-473a5b251/">
+        <span class="social-k">LinkedIn</span>
+        <span class="social-v">Antonie Chirilus &nbsp;↗</span>
       </a>
-      <a href="https://github.com/tonyc973" class="group flex flex-col gap-1.5">
-        <span style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.66rem;">GitHub</span>
-        <span style="color: var(--text);" class="group-hover:[color:var(--accent)] transition-colors">/tonyc973 &nbsp;↗</span>
+      <a href="https://github.com/tonyc973">
+        <span class="social-k">GitHub</span>
+        <span class="social-v">@tonyc973 &nbsp;↗</span>
       </a>
-      <a href="https://www.kaggle.com/tonychirilus/competitions" class="group flex flex-col gap-1.5">
-        <span style="color: var(--text-3); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.66rem;">Kaggle</span>
-        <span style="color: var(--text);" class="group-hover:[color:var(--accent)] transition-colors">/tonychirilus &nbsp;↗</span>
+      <a href="https://www.kaggle.com/tonychirilus/competitions">
+        <span class="social-k">Kaggle</span>
+        <span class="social-v">tonychirilus &nbsp;↗</span>
       </a>
     </div>
   </div>

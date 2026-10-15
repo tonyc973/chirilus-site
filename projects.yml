@@ -1,0 +1,107 @@
+# Selected work on the homepage. Order here = order on the page.
+# featured: the first entry is the flagship (big card + spec sheet); the rest form the card grid.
+# more:     the compact "More on GitHub" list underneath.
+# Required per entry: title, url, description. Optional: kicker, year, stack, context + highlights (flagship).
+
+featured:
+  - title: AI Interview Prep
+    url: https://github.com/tonyc973/ai-interview-prep
+    kicker: Production LLM app
+    year: 2026
+    description: >-
+      AI mock-interview platform. CrewAI agents research the role and build a tailored question
+      bank; an interviewer and an evaluator then run and score the session. Every model call goes
+      through one gateway that owns retries, timeouts and hard spend caps.
+    highlights:
+      - One LLM gateway — retries, timeouts, spend ledger
+      - "Spend caps: $0.50 per session, $5 per user per day"
+      - Typed Pydantic outputs for every agent
+      - 50 tests · ruff + mypy --strict in CI
+    stack: [Python 3.12, CrewAI, OpenAI, NiceGUI, SQLAlchemy]
+
+  - title: CVEScope
+    url: https://github.com/tonyc973/cvescope
+    kicker: Security · Retrieval
+    year: 2026
+    description: >-
+      CVE triage assistant over 116,902 CVEs joined with CISA KEV and EPSS. BM25 written from
+      scratch, fused with dense retrieval through RRF, a CVE–product graph, and tool-using agents
+      whose answers are scored by a judge from another model family.
+    stack: [Python, BM25 + RRF, scikit-learn, OpenAI, Streamlit]
+
+  - title: Context-Kit
+    url: https://github.com/tonyc973/Context-Kit
+    kicker: Agent memory
+    year: 2026
+    description: >-
+      Persistent memory for LLM agents: seven ChromaDB-backed stores, each with its own write rule
+      (append-only, similarity replacement, dedup, TTL, sliding window), plus an LLM router that
+      decides which stores to search and a trace for every turn.
+    stack: [Python, ChromaDB, OpenAI, Streamlit]
+
+  - title: Drift Sentinel
+    url: https://github.com/tonyc973/semantic-drift-sentinel
+    kicker: Observability
+    year: 2026
+    description: >-
+      Drop-in MCP middleware that catches silent tool-output drift. It embeds responses with
+      Sentence-BERT, tracks PSI and cosine shift against a baseline, diffs JSON schemas for renamed
+      or retyped fields, and raises graded alerts.
+    stack: [Python, MCP, Sentence-BERT, FastAPI, SQLite]
+
+  - title: Civil-Servant Agent
+    url: https://github.com/tonyc973/Civil-Servant-Agent
+    kicker: Agents · MCP
+    year: 2026
+    description: >-
+      Conversational agent, in Romanian, that fills in public-service applications. The model picks
+      validation tools from a local MCP server (CNP checksum, registry lookups), and server-side
+      checks stop it from finishing while fields are missing or invalid.
+    stack: [Python, MCP, OpenAI, Streamlit, SQLite]
+
+  - title: Lumé
+    url: https://github.com/tonyc973/schedule-in-real-time
+    kicker: Full-stack
+    year: 2026
+    description: >-
+      Map-first booking app for Bucharest salons. A pure, deterministic slot engine (15-minute steps,
+      DST-aware local time) with transactional double-booking checks; “any specialist” bookings
+      fall through to the next free person.
+    stack: [TypeScript, Next.js 14, Prisma, Leaflet, Vitest]
+
+  - title: AgentForge
+    url: https://github.com/tonyc973/AgentForge
+    kicker: Multi-agent
+    year: 2026
+    description: >-
+      Five CrewAI agents — architect, code generator, test writer, reviewer, deployer — turn a
+      one-line request into a new CrewAI project: a typed blueprint, generated code, pytest in an
+      isolated virtualenv, then a GitHub repository.
+    stack: [Python, CrewAI, Pydantic, Jinja2, PyGithub]
+
+more:
+  - title: DeepResearchAgents
+    url: https://github.com/tonyc973/DeepResearchAgents
+    description: Orchestrator–workers research agent on smolagents; every call traced to Langfuse.
+    stack: [smolagents, Langfuse]
+    year: 2026
+  - title: ml-experiment-tracker
+    url: https://github.com/tonyc973/ml-experiment-tracker
+    description: Logs ML runs to SQLite with an environment snapshot, syncs to Notion or Sheets, and ships an MCP server.
+    stack: [Python, MCP, SQLite]
+    year: 2026
+  - title: ai-issue-auto-solver
+    url: https://github.com/tonyc973/ai-issue-auto-solver
+    description: Ranks open issues in ML repos, lets Claude Code attempt a fix, and opens the pull request.
+    stack: [Bash, gh, Claude Code]
+    year: 2026
+  - title: ProForm
+    url: https://github.com/tonyc973/ProForm-AI-Pushup-Coach
+    description: Grades push-up form from video — MediaPipe pose, an LSTM classifier, GPT-4o coaching.
+    stack: [MediaPipe, Keras, OpenAI]
+    year: 2026
+  - title: RepoDoctor
+    url: https://github.com/tonyc973/RepoDoctor
+    description: Two AutoGen 0.4 agents explore a GitHub repo through MCP tools and write an improvement report.
+    stack: [AutoGen, MCP]
+    year: 2026

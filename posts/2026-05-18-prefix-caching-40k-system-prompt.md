@@ -2,7 +2,7 @@
 title: "The 40K-token system prompt that wasn't slow"
 date: 2026-05-18
 tag: Inference
-summary: "I spent a week chasing latency on a local LLM setup. The bottleneck wasn't the GPU, the model, or the quantization — it was the prefill stage doing the same 40K tokens of work on every request."
+summary: "The bottleneck wasn't the GPU, the model, or the quantization — it was the prefill stage doing the same 40K tokens of work on every request."
 ---
 
 Spent a week chasing latency on my local LLM setup. The answer was not the one I expected.
@@ -69,5 +69,3 @@ The 5090 is a beast. The real unlock was making it do less.
 
 > If the first N tokens of every request are the same,
 > compute them once.
-
-— Antonie

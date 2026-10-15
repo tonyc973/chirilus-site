@@ -2,6 +2,8 @@
 title: "My RTX 5090 was running an LLM 3× slower than it should — and the fix was four lines of config"
 date: 2026-05-27
 tag: Inference
+result: "12 s → 4 s"
+result_note: "per turn · qwen3-coder:30b · one RTX 5090"
 summary: "qwen3-coder:30b should fit comfortably on a single 5090, but it was silently spilling 14 GB to the CPU for a 256k context window I never used. One Modelfile parameter took inference from 12s to 4s per turn."
 ---
 
